@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, booleanAttribute } from '@angular/core';
 
 @Component({
-  selector: 'app-title',
+  selector: 'shared-title',
   standalone: true,
   imports: [
     CommonModule,
   ],
-  templateUrl: './title.component.html',
+  template: `<h1 class="text-3xl mb-5 text-purple-950">{{ title | titlecase }} </h1>`,
   styles: [`
     :host {
       display: block;
@@ -15,4 +15,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TitleComponent { }
+export class TitleComponent {
+
+  @Input({ required: true }) title!: string;
+
+  //De esta manera se reciben como true el hecho de exista un atributo en el elemento
+  //@Input({transform:booleanAttribute}) withShadow:boolean=false;
+
+}

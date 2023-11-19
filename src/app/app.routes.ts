@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'dashboard',
-    //esto funcionara porque el dashboar component es una clase que exporta por defecto
+    //esto funcionara porque el dashboard component es una clase que exporta por defecto
     loadComponent: () => import('./dashboard/dashboard.component'),
     children: [
       //algunas importatas por defecto y otras no para recordar como se puede hacer...

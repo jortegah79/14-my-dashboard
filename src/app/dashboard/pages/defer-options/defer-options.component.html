@@ -1,1 +1,101 @@
-<p>defer-options works!</p>
+<shared-title title="defer triggers" />
+
+
+<h1 class="text-xl">Interacciones</h1>
+
+<button #btnInteraction class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2">
+  Click me!
+</button>
+<section>
+  <hr class="my2">
+  @defer(on interaction){
+  <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>On interaction</span>
+  </shared-heavy-loaders-fast>
+  } @placeholder {
+  <div class="w-full h-20 bg-purple-200">
+    Click en el div
+  </div>
+  }
+
+</section>
+
+
+<section>
+  <hr class="my2">
+
+
+  @defer(on interaction(btnInteraction)){
+  <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>On interaction(with button)</span>
+  </shared-heavy-loaders-fast>
+  }
+
+</section>
+
+<section>
+  <hr class="my2">
+
+
+  @defer(on hover){
+  <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>On hover</span>
+  </shared-heavy-loaders-fast>
+  } @placeholder {
+  <div class="w-full h-20 bg-purple-200">
+    Click en el div
+  </div>
+  }
+
+</section>
+
+
+<section>
+  <hr class="my2">
+
+
+  @defer(on immediate){
+  <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>On immediate</span>
+  </shared-heavy-loaders-fast>
+  } @placeholder {
+  <div class="w-full h-20 bg-purple-200">
+    Click en el div
+  </div>
+  }
+
+</section>
+
+
+<section>
+  <hr class="my2">
+
+
+  @defer(on timer( 2000 )){
+  <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>On timer</span>
+  </shared-heavy-loaders-fast>
+  } @placeholder {
+  <div class="w-full h-20 bg-purple-200">
+    2 segundos
+  </div>
+  }
+
+</section>
+
+
+<section>
+  <hr class="my2">
+
+
+  @defer(on hover;prefetch on idle){
+  <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>On hover,on idle</span>
+  </shared-heavy-loaders-fast>
+  } @placeholder {
+  <div class="w-full h-20 bg-purple-200">
+   hover
+  </div>
+  }
+
+</section>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'shared-heavy-loaders-slow',
@@ -7,7 +7,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [
     CommonModule,
   ],
-  template: `<h1>Heavy-loaders slow  works</h1>`,
+  template: `
+  <section [ngClass]="['w-full h-[620px]' , cssClass]">
+Heavy Loader Slow
+  </section >`,
   styles: [`
     :host {
       display: block;
@@ -15,4 +18,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeavyLoadersSlowComponent { }
+export class HeavyLoadersSlowComponent {
+
+@Input({required:true}) cssClass!:string;
+
+
+  constructor() {
+const start=Date.now();
+while(Date.now() - start <3000){}
+console.log('cargado')
+}
+}
