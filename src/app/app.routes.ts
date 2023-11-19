@@ -13,7 +13,8 @@ export const routes: Routes = [
       { path: 'defer-views', title: 'Defer views', loadComponent: () => import('./dashboard/pages/defer-views/defer-views.component').then(c => c.DeferViewsComponent) },
       { path: 'user/:id', title: 'User', loadComponent: () => import('./dashboard/pages/user/user.component') },
       { path: 'users-list', title: 'User list', loadComponent: () => import('./dashboard/pages/users/users.component').then(c => c.UsersComponent) },
-      { path: 'view-transition', title: 'View transition', loadComponent: () => import('./dashboard/pages/view-transition/view-transition.component') },
+      { path: 'view-transition1', title: 'View transition1', loadComponent: () => import('./dashboard/pages/view-transition/view-transition.component1') },
+      { path: 'view-transition2', title: 'View transition2', loadComponent: () => import('./dashboard/pages/view-transition/view-transition.component2')},
       { path: '', redirectTo: 'control-flow', pathMatch: 'full' },
     ]
   },
